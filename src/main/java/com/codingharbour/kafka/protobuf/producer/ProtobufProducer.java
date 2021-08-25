@@ -32,7 +32,7 @@ public class ProtobufProducer {
         //prepare the message
         SimpleMessage simpleMessage =
                 SimpleMessage.newBuilder()
-                        .setContent("Hello world")
+                        .setContent("Hello Protobuf")
                         .setDateTime(Instant.now().toString())
                         .build();
 

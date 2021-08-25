@@ -24,7 +24,7 @@ public class ProtobufConsumer {
 
     public void readMessages() {
         Properties properties = new Properties();
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "protobuf-consumer-group");
         properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
@@ -44,8 +44,8 @@ public class ProtobufConsumer {
             ConsumerRecords<String, SimpleMessage> records = consumer.poll(Duration.ofMillis(100));
 
             for (ConsumerRecord<String, SimpleMessage> record : records) {
-                System.out.println("Message content: " + record.value().getContent());
-                System.out.println("Message time: " + record.value().getDateTime());
+                System.out.println("Protobuf message content: " + record.value().getContent());
+                System.out.println("Protobuf message timestamp: " + record.value().getDateTime());
             }
             consumer.commitAsync();
         }

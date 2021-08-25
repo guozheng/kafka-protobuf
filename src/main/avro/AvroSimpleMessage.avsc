@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "AvroSimpleMessage",
+  "namespace": "com.codingharbour.avro",
+  "fields": [
+    {
+      "name": "content",
+      "type": "string",
+      "default": ""
+    },
+    {
+      "name": "date_time",
+      "type": "string",
+      "default": ""
+    }
+  ]
+}
